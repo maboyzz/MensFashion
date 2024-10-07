@@ -1,0 +1,165 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    margin-top: 0px;
+}
+.containers{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    position: -webkit-sticky; /* Thiet lap header dinh len tren khi cuon chuot */
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 6px;
+    box-shadow: 0px 2px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Bao dam header luon nam tren cung cac phan tu khac */
+}
+.left-header{
+    width: 122px;
+    height: 45px;
+}
+.mid-header{
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+.search-bar{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100%;
+    padding: 3px;
+}
+.search-bar form{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-input{
+    width: 90%;
+    padding: 5px;
+    border: none;
+}
+.search-input:focus{
+    outline: none;
+}
+.search-button{
+    background-color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-button:hover{
+    cursor: pointer;
+}
+.right-header{
+    width: 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user-icon{
+    display: inline-block;
+    cursor: pointer;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+.dropdown-content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover{
+    background-color: #f1f1f1;
+}
+.user-icon:hover + .dropdown-content,
+.dropdown-content:hover {
+    display: block;
+}
+a{
+    text-decoration: none;
+    color: inherit;    
+}
+.main{
+    flex: 1;
+    margin-top: 5px;
+    display: flex;
+}
+.tab{
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+.button-tab{
+    width: 100%;
+    height: 35px;    
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+.button-tab:hover{
+    background-color: #C27A74;
+    transform: scale(1.05);
+    border-radius: 3px;
+}
+.button-tab:active{
+    transform: scale(0.95);
+}
+.content{
+    width: 80%;
+    height: auto;
+    padding: 10px;
+}
+.information{
+    width: 10%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+.footer{
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: #25252F;
+    color: white;
+    display: flex;
+}
+.footer-introduce{
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.footer-member{
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.footer-member ul li{
+    list-style-type: none;
+}
+

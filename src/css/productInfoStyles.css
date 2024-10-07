@@ -1,0 +1,30 @@
+.page-containers{
+    display: flex;
+    flex-direction: column;
+}
+.product-info{    
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+}
+.come-back{
+    margin: 3px 0px 10px;
+}
+.product-info img{
+    width: 50%;
+    height: 60%;
+}
+.text-info{
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+}
+.title-info{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0px 30px;
+}
+.text-info p{
+    font-size: 15px;
+    margin: 3px 0px;
+    
+}

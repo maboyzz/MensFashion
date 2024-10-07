@@ -1,0 +1,28 @@
+.content-section {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #f4f4f4;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.pagination a:hover {
+    background-color: #C27A74;
+    color: white;
+}
