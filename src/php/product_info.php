@@ -4,7 +4,7 @@
     $product_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
     if ($product_id) {
-        $query = "SELECT * FROM productdetails WHERE product_id = $product_id";
+        $query = "SELECT * FROM products WHERE product_id = $product_id";
         $result = $conn->query($query);
         $product = $result->fetch_assoc();
     } else {

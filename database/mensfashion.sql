@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 07, 2024 lúc 07:44 PM
+-- Thời gian đã tạo: Th10 08, 2024 lúc 10:56 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `mensfashion`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `cart`
+--
+
+INSERT INTO `cart` (`id`, `user_id`, `product_id`, `quantity`) VALUES
+(1, 1, 10, 1);
 
 -- --------------------------------------------------------
 
@@ -74,7 +94,7 @@ INSERT INTO `productdetails` (`product_id`, `product_name`, `category_id`, `pric
 (7, 'Áo Len Tay Dài Dệt Họa Tiết Quả Trám', 1, 420000, 'Áo dệt ngắn tay cest la vie năng động. Trang phục phù hợp dạo phố, đi học. Chất liệu vải knit đàn hồi cao, tạo sự thoải mái cho người mặc.', 9999, 1000, 'S', 'Trắng', 'https://4menshop.com/images/thumbs/2024/10/ao-len-tay-dai-det-hoa-tiet-qua-tram-form-regular-al012-18748-slide-products-6700f3e69ac9d.JPG'),
 (8, 'Áo Sơ Mi đi phố ', 1, 200000, 'Trang phục phù hợp dạo phố, đi chơi. Chất liệu vải silk cao cấp tạo sự thoải mái cho người mặc.', 9999, 645, 'S', 'Đen', 'https://4menshop.com/images/thumbs/2022/02/ao-so-mi-in-hoa-tiet-asm083-mau-den-16613-slide-products-620c768e6a1fa.JPG'),
 (9, 'Áo Hoodie Rã Phối Thêu Home Is Form Regular', 1, 550000, 'Trang phục phù hợp dạo phố, đi chơi. Chất liệu vải len cao cấp tạo sự thoải mái cho người mặc.', 9999, 885, 'S', 'Kem', 'https://4menshop.com/images/thumbs/2024/03/ao-hoodie-ra-phoi-theu-home-is-form-regular-ah004-mau-kem-18373-slide-products-65feae51a559e.jpg'),
-(10, 'Áo Vest NAZAFU Đỏ Mận ', 1, 9999999, 'Áo Vest nam đã trở thành món đồ không thể thiếu, giúp tôn lên vẻ đẹp, sức cuốn hút của phái mạnh. Một bộ Vest hoàn hảo giúp tôn lên vóc dáng, vẻ lịch lãm sẽ giúp các chàng trai  thêm tự tin và thu hút. Chỉnh chu trong vẻ bề ngoài cũng là cách khẳng định giá trị của bản thân. Dù là đi làm hay đi chơi thì áo Vest cũng luôn là một điểm nhấn đặc biệt ghi điểm trong mắt người đối diện', 9999, 523, 'S', 'Đỏ mận', 'https://4menshop.com/images/thumbs/2019/01/ao-vest-nazafu-do-man-1133-10578-slide-products-5c36c8319f42c.jpg'),
+(10, 'Áo Khoác Da Form Regular', 1, 875000, 'Trang phục phù hợp dạo phố, đi chơi. Chất liệu vải len cao cấp tạo sự thoải mái cho người mặc.', 9999, 245, 'S', 'Màu Nâu', 'https://4menshop.com/images/thumbs/2024/04/ao-khoac-da-form-regular-ak056-mau-nau-18336-slide-products-662335355bfdb.jpg'),
 (11, 'Quần Tây Sidetab 1 Bên Form Regular', 2, 425000, 'Được làm từ chất liệu vải cao cấp, quần tây nam này mang đến vẻ ngoài trang nhã, hoàn hảo cho các buổi họp mặt, công sở hoặc sự kiện quan trọng.', 9999, 100, 'S', 'Đen', 'https://4menshop.com/images/thumbs/2024/10/quan-tay-sidetab-1-ben-form-regular-qt062-mau-be-18786-slide-products-6703ae986f254.jpg'),
 (12, 'Quần Tây Sọc Túi Nắp Sau Form Slimfit', 2, 525000, 'Sản phẩm quần tây này phù hợp cho nhiều dịp, từ đi làm đến dự tiệc. Với thiết kế đơn giản nhưng tinh tế, bạn có thể dễ dàng kết hợp với nhiều kiểu áo khác nhau.', 9999, 150, 'S', 'Xám', 'https://4menshop.com/images/thumbs/2024/10/quan-tay-soc-tui-nap-sau-form-slimfit-qt061-mau-xam-18777-slide-products-6701743d146a5.png'),
 (13, 'Quần Tây Trơn Form Slimfit', 2, 299000, 'Thiết kế với đường may tinh tế và chi tiết tỉ mỉ, quần tây cổ điển giúp bạn toát lên vẻ lịch lãm và phong cách, là lựa chọn lý tưởng cho những người yêu thích sự truyền thống.', 9999, 120, 'S', 'Đen', 'https://4menshop.com/images/thumbs/2024/08/quan-tay-tron-form-slimfit-qt058-mau-den-18346-slide-products-66bc7b4c4ac5b.jpg'),
@@ -84,7 +104,22 @@ INSERT INTO `productdetails` (`product_id`, `product_name`, `category_id`, `pric
 (17, 'Quần Jeans Xanh Đậm Wash Cát Form Straight', 2, 495000, 'Được làm từ chất liệu denim bền bỉ, quần jeans cổ điển mang đến phong cách timeless, dễ dàng kết hợp với áo thun, áo sơ mi hay áo khoác cho mọi dịp.', 9999, 888, 'S', 'Xanh đậm', 'https://4menshop.com/images/thumbs/2024/02/quan-jeans-xam-wash-bac-duong-may-suon-form-slimfit-qj093-18404-slide-products-65dda271a3ee6.jpg'),
 (18, 'Quần Jeans Xanh Nhạt In Túi Sau Form Slimfit', 2, 525000, 'Với gam màu xanh nhạt nhẹ nhàng, quần jeans này dễ dàng kết hợp với nhiều loại trang phục khác nhau, từ áo polo đến áo khoác, giúp bạn luôn nổi bật và thời thượng.', 9999, 666, 'S', 'Xanh nhạt', 'https://4menshop.com/images/thumbs/2024/06/quan-jeans-xanh-den-theu-4men-form-regular-qj101-18592-slide-products-66710c63e4b78.jpg'),
 (19, 'Quần Short Kaki Xếp Ly Form Straight', 2, 375000, 'Chất liệu kaki mềm mại và thoáng khí giúp quần short này mang lại cảm giác dễ chịu trong những ngày hè oi ả, lý tưởng cho các hoạt động ngoài trời.', 9999, 555, 'S', 'Be', 'https://4menshop.com/images/thumbs/2024/10/quan-short-kaki-xep-ly-form-straight-qs059-mau-be-18761-slide-products-6701098eb84e0.jpg'),
-(20, 'Quần Short Trơn Lưng Thun Ẩn Thông Minh Form Regular', 2, 385000, 'Quần short kaki thường dễ dàng giặt giũ và không cần ủi, giúp bạn tiết kiệm thời gian chăm sóc và luôn sẵn sàng cho mọi hoạt động.', 9999, 333, 'S', 'Đen', 'https://4menshop.com/images/thumbs/2024/07/quan-short-tron-lung-thun-an-thong-minh-form-regular-qs057-18626-slide-products-66a7474652d8a.jpg');
+(20, 'Quần Short Trơn Lưng Thun Ẩn Thông Minh Form Regular', 2, 385000, 'Quần short kaki thường dễ dàng giặt giũ và không cần ủi, giúp bạn tiết kiệm thời gian chăm sóc và luôn sẵn sàng cho mọi hoạt động.', 9999, 333, 'S', 'Đen', 'https://4menshop.com/images/thumbs/2024/07/quan-short-tron-lung-thun-an-thong-minh-form-regular-qs057-18626-slide-products-66a7474652d8a.jpg'),
+(21, 'Giày Nike Dunk Disrupt 2', 3, 50000000, 'Theo Schlemmer, với những ai muốn tìm kiếm thêm phong cách, Dunk High chính là lựa chọn hoàn hảo. Mặc dù hiếm gặp hơn Dunk Low, nhưng Dunk High lại mang nét sang trọng, có thể kết hợp hoàn hảo với quần jean và các loại quần khác. Để có sự đổi mới so với thiết kế cổ điển, phiên bản Knicks là lựa chọn mạnh mẽ với sự kết hợp sắc màu của đội bóng New York Knicks. Ra mắt vào tháng 7/2022, phong cách đặc trưng này gợi nhớ đến phiên bản City Attack Japan độc quyền năm 1999.', 9999, 246, 'S', 'Trắng Xanh Lá', 'https://giayxshop.vn/wp-content/uploads/2022/12/z4775083092197_82ff7cf10d230fc7c3e8ce2b22f93c3d-2048x2048.jpg'),
+(22, 'Nike Air Force 1 Shadow', 3, 55000000, 'Kiểu dáng: phong cách, cá tính, chất. Phù hợp: Có thể đi đôi,thích hợp đi chơi, đi học,đi làm, đạp xe,....Phối đồ: Có thể kết hợp với jeans,thô, sooc, bộ thể thao, váy cá tính,....', 9999, 423, 'S', 'Xanh Xám', 'https://giayxshop.vn/wp-content/uploads/2023/08/z4767114973294_89de3df2b679f7eee9357603388cf3ba-2048x2048.jpg'),
+(23, 'Nike Air Force 1 ID Gucci REP 1:1', 3, 500000, 'Kiểu dáng: phong cách, cá tính, chất. Phù hợp: Có thể đi đôi,thích hợp đi chơi, đi học,đi làm, đạp xe,....Phối đồ: Có thể kết hợp với jeans,thô, sooc, bộ thể thao, váy cá tính,....', 9999, 423, 'S', 'Xanh Đỏ', 'https://giayxshop.vn/wp-content/uploads/2021/12/z5449845601099_417a669731b490dabcd625499d512ee2.jpg'),
+(24, 'Nike Jordan 1 Gót Navy REP 1:1', 3, 550000, 'Kiểu dáng: phong cách, cá tính, chất. Phù hợp: Có thể đi đôi,thích hợp đi chơi, đi học,đi làm, đạp xe,....Phối đồ: Có thể kết hợp với jeans,thô, sooc, bộ thể thao, váy cá tính,....', 9999, 1028, 'S', 'Xanh Xám', 'https://giayxshop.vn/wp-content/uploads/2022/10/z4767281310657_0766364b408847317ce49e9ef13cc655-2048x2048.jpg'),
+(25, 'Giày Adidas Ultrabounce', 3, 6450000, 'Giày Thể Thao Adidas Ultrabounce có thiết kế đẹp mắt, kiểu dáng hiện đại đến từ thương hiệu Adidas  nổi tiếng. Giày sở hữu gam màu trang nhã, cùng bộ đệm êm ái mang lại trải nghiệm tuyệt vời cho bạn khi chơi thể thao, vận động, chạy nhảy.', 9999, 1243, 'S', 'Xám', 'https://giayxshop.vn/wp-content/uploads/2023/10/z4835458960025_ffc77db34192891fb9ce05972ccdb6d2.jpg'),
+(26, 'Adidas Samba OG Da Lộn', 3, 1450000, 'Kháng nước nhẹ khi đi mưa. Đế và lót được khâu toàn bộ tránh bung keo. Thích hợp sử dụng với nhiều hoạt động thể thao, vui chơi,..', 9999, 118, 'S', 'Xanh Xám', 'https://giayxshop.vn/wp-content/uploads/2024/09/z5815158180682_6dc0e35ab3ca5e12960442ae7821658e.jpg'),
+(27, 'Giày Adidas Centennial 85 Low REP 1:1', 3, 550000, 'Giày đẹp, nhẹ, bền. Giá phải chăng phù hợp với các bạn học sinh, sinh viên. Có thể làm giày đôi, giày nhóm. Thích hợp đi chơi, du lịch, chạy bộ, gym, đi học, đi làm... ', 9999, 111, 'S', 'Kem Xanh Lá', 'https://giayxshop.vn/wp-content/uploads/2023/02/z4116989953955_e8b1e47525e1f2d270bf32ec5188dcd8.jpg'),
+(28, 'Adidas A161 REP', 3, 55000000, 'Dễ phối đồ, có thể kết hợp với váy, jeans, sooc…. Phù hợp với mọi thời tiết từ đông sang hè.', 9999, 113, 'S', 'Trắng Xanh Hồng', 'https://giayxshop.vn/wp-content/uploads/2023/04/z4765367152505_907cabb818cd19e98af26fbf1ecd6ce1-2048x2048.jpg'),
+(29, 'Giày LV Trainer Kaki REP 1:1', 3, 572000, 'Dễ phối đồ, có thể kết hợp với váy, jeans, sooc…. Phù hợp với mọi thời tiết từ đông sang hè.', 9999, 113, 'S', 'Trắng Xanh', 'https://giayxshop.vn/wp-content/uploads/2023/12/z4963869411644_8706e695d82e57f5fa6626cd695f2a13.jpg'),
+(30, 'Balenciaga Speed REP 1:1', 3, 484000, 'Giày đẹp, nhẹ, bền. Giá phải chăng phù hợp với các bạn học sinh, sinh viên. Có thể làm giày đôi, giày nhóm. Thích hợp đi chơi, du lịch, chạy bộ, gym, đi học, đi làm... ', 9999, 178, 'S', 'Trắng Đen', 'https://giayxshop.vn/wp-content/uploads/2023/02/z4136862798879_c3ce5272ebcffdc9f53eb849312a766e.jpg'),
+(31, 'Giày MLB Bigball Chunky Mono B Nâu REP 1:1', 3, 510000, 'Dễ phối đồ, có thể kết hợp với váy, jeans, sooc…. Phù hợp với mọi thời tiết từ đông sang hè.', 9999, 99, 'S', 'Nâu', 'https://giayxshop.vn/wp-content/uploads/2022/02/z5468129065392_94e9f82583270e889bf329b77afc9487.jpg'),
+(32, 'Converse 1970s Cao Cổ REP 1:1', 3, 396000, 'Kháng nước nhẹ khi đi mưa. Đế và lót được khâu toàn bộ tránh bung keo. Thích hợp sử dụng với nhiều hoạt động thể thao, vui chơi,...', 9999, 178, 'S', 'Trắng Đen', 'https://giayxshop.vn/wp-content/uploads/2022/12/5-5-scaled.jpg'),
+(33, 'Alexander McQueen Da Trắng Gót Đen REP 1:1', 3, 650000, 'Giày đẹp, nhẹ, bền. Giá phải chăng phù hợp với các bạn học sinh, sinh viên. Có thể làm giày đôi, giày nhóm. Thích hợp đi chơi, du lịch, chạy bộ, gym, đi học, đi làm... ', 9999, 128, 'S', 'Trắng Đen', 'https://giayxshop.vn/wp-content/uploads/2020/11/z5880848022300_4ac7ade3510b49e8ef19547838311c6c.jpg'),
+(34, 'MLB Chunky Liner LA REP 1:1', 3, 600000, 'Dễ phối đồ, có thể kết hợp với váy, jeans, sooc…. Phù hợp với mọi thời tiết từ đông sang hè.', 9999, 99, 'S', 'Trắng Navy', 'https://giayxshop.vn/wp-content/uploads/2023/12/z5417597965507_368f6c1f0c6b94d1501a3ed1456c2efa.jpg'),
+(35, 'Giày LV Trainer REP 1:1', 3, 650000, 'Giày đẹp, nhẹ, bền. Giá phải chăng phù hợp với các bạn học sinh, sinh viên. Có thể làm giày đôi, giày nhóm. Thích hợp đi chơi, du lịch, chạy bộ, gym, đi học, đi làm... ', 9999, 1463, 'S', 'Trắng Navy NHẠT', 'https://giayxshop.vn/wp-content/uploads/2022/12/z3942965409838_8f7ed72c925d0bfd638fabf5b4e68b13.jpg');
 
 -- --------------------------------------------------------
 
@@ -112,6 +147,11 @@ INSERT INTO `products` (`product_id`, `category_id`) VALUES
 (8, 1),
 (9, 1),
 (10, 1),
+(36, 1),
+(37, 1),
+(38, 1),
+(39, 1),
+(40, 1),
 (11, 2),
 (12, 2),
 (13, 2),
@@ -121,7 +161,23 @@ INSERT INTO `products` (`product_id`, `category_id`) VALUES
 (17, 2),
 (18, 2),
 (19, 2),
-(20, 2);
+(20, 2),
+(31, 2),
+(41, 2),
+(21, 3),
+(22, 3),
+(23, 3),
+(24, 3),
+(25, 3),
+(26, 3),
+(27, 3),
+(28, 3),
+(29, 3),
+(30, 3),
+(32, 3),
+(33, 3),
+(34, 3),
+(35, 3);
 
 -- --------------------------------------------------------
 
@@ -169,6 +225,14 @@ INSERT INTO `users` (`id`, `username`, `password`) VALUES
 --
 
 --
+-- Chỉ mục cho bảng `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
 -- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
@@ -205,6 +269,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
@@ -214,13 +284,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `productdetails`
 --
 ALTER TABLE `productdetails`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
@@ -231,6 +301,13 @@ ALTER TABLE `users`
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
+
+--
+-- Các ràng buộc cho bảng `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
 
 --
 -- Các ràng buộc cho bảng `productdetails`

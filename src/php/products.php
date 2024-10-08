@@ -19,8 +19,8 @@
     }
 
     // Tạo câu lệnh SQL cơ bản
-    $query = "SELECT * FROM productdetails WHERE 1=1";
-    $total_query = "SELECT COUNT(*) AS total FROM productdetails WHERE 1=1";
+    $query = "SELECT * FROM products WHERE 1=1";
+    $total_query = "SELECT COUNT(*) AS total FROM products WHERE 1=1";
 
     // Thêm điều kiện tìm kiếm
     if ($search) {
