@@ -93,19 +93,6 @@ h2 {
     background-color: #2575fc;
 }
 
-.forgot-password {
-    display: block;
-    text-align: right;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #6a11cb;
-    text-decoration: none;
-}
-
-.forgot-password:hover {
-    color: #2575fc;
-}
-
 .register-link {
     text-align: center;
     margin-top: 20px;

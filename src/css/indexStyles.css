@@ -64,10 +64,13 @@ body{
     cursor: pointer;
 }
 .right-header{
-    width: 6%;
+    width: 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    gap: 5px;
+    margin-right: 20px;
 }
 .user-icon{
     display: inline-block;
@@ -76,8 +79,9 @@ body{
 .dropdown-content{
     display: none;
     position: absolute;
-    top: 40px;
+    top: 35px;
     right: 0px;
+    white-space: nowrap;
     background-color: #ffffff;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 1;
@@ -109,7 +113,7 @@ a{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-top: 10px;
+    padding-top: 18px;
     background-color: #fff;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
@@ -144,7 +148,7 @@ a{
     box-sizing: border-box;
     width: 100%;
     height: auto;
-    padding: 20px;
+    padding: 0px 10px;
     background-color: #25252F;
     color: white;
     display: flex;

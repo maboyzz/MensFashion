@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Team Nine Store</title>
     <link rel="stylesheet" href="../css/indexStyles.css">    
 </head>
 <body>
